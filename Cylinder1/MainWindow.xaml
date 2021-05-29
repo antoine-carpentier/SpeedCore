@@ -1,0 +1,62 @@
+﻿<Window x:Class="SpeedCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeedCore"
+        mc:Ignorable="d"
+        Title="SpeedCore" Height="456.4" Width="800">
+    <Grid>
+
+        <ComboBox Name = "Stud" HorizontalAlignment="Left" Margin="582,121,0,0" VerticalAlignment="Top" Width="60">
+            <ComboBoxItem>¼</ComboBoxItem>
+            <ComboBoxItem>⅜</ComboBoxItem>
+            <ComboBoxItem>½</ComboBoxItem>
+            <ComboBoxItem>⅝</ComboBoxItem>
+        </ComboBox>
+        <Button Content="OK" Click="OKButton_Click" HorizontalAlignment="Left" Margin="649,321,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Stud Diameter:" HorizontalAlignment="Left" Margin="446,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="Length:" HorizontalAlignment="Left" Margin="485,162,0,0" VerticalAlignment="Top"/>
+        <Label Content="Spacing:" HorizontalAlignment="Left" Margin="480,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.745,-0.152"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,166,0,0" TextWrapping="Wrap" Text="Length (in)" VerticalAlignment="Top" Width="120"
+                 Foreground="LightSteelBlue" Visibility="{Binding ElementName=Length, Path=Text.IsEmpty, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,208,0,0" TextWrapping="Wrap" Text="Spacing (in)" VerticalAlignment="Top" Width="120"
+                 Foreground="LightSteelBlue" Visibility="{Binding ElementName=Spacing, Path=Text.IsEmpty, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,252,0,0" TextWrapping="Wrap" Text="Wall Thickness (in)" VerticalAlignment="Top" Width="120"
+                 Foreground="LightSteelBlue" Visibility="{Binding ElementName=WallThickness, Path=Text.IsEmpty, Converter={StaticResource boolToVisibilityConverter}}" IsHitTestVisible="False"/>
+        <TextBox Name ="Length" HorizontalAlignment="Left" Height="23" Margin="582,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Transparent"/>
+        <TextBox Name ="Spacing" HorizontalAlignment="Left" Height="23" Margin="582,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Transparent"/>
+        <TextBox Name ="WallThickness" HorizontalAlignment="Left" Height="23" Margin="582,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Transparent"/>
+        <Label Content="Wall Thickness:" HorizontalAlignment="Left" Margin="445,248,0,0" VerticalAlignment="Top"/>
+        <TabControl HorizontalAlignment="Left" Height="396" Margin="40,10,0,0" VerticalAlignment="Top" Width="373">
+            <TabItem Header="Isometric">
+                <Border Name="BorderIso" BorderThickness="3" BorderBrush="Black" Background="LightGray"  HorizontalAlignment="Left"
+                    VerticalAlignment="Top" Width="366" Height="366" Margin="0,1,0,0">
+                    <Canvas x:Name="CanvasIso" HorizontalAlignment="Left" Height="360" Margin="-0.2,0.8,0,-0.8" VerticalAlignment="Top" Width="360" Background="AntiqueWhite">
+                        <Label Content="Antoine" FontSize="22" FontWeight="Bold" Width="100" Canvas.Left="130" Canvas.Top="144" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Content="Carpentier" FontSize="26" FontWeight="Bold" Width="200" Canvas.Left="80" Canvas.Top="171" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Canvas>
+                </Border>
+            </TabItem>
+            <TabItem Header="Section">
+                <Border Name="BorderSec" BorderThickness="3" BorderBrush="Black" Background="LightGray"  HorizontalAlignment="Left"
+                    VerticalAlignment="Top" Width="366" Height="366" Margin="0,1,0,0">
+                    <Canvas x:Name="CanvasSec" HorizontalAlignment="Left" Height="360" Margin="-0.2,0.8,0,-0.8" VerticalAlignment="Top" Width="360" Background="AntiqueWhite">
+                        <Label Content="Antoine" FontSize="22" FontWeight="Bold" Width="100" Canvas.Left="130" Canvas.Top="144" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Content="Carpentier" FontSize="26" FontWeight="Bold" Width="200" Canvas.Left="80" Canvas.Top="171" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Canvas>
+                </Border>
+            </TabItem>
+            <TabItem Header="Elevation">
+                <Border Name="BorderEl" BorderThickness="3" BorderBrush="Black" Background="LightGray"  HorizontalAlignment="Left"
+                    VerticalAlignment="Top" Width="366" Height="366" Margin="0,1,0,0">
+                    <Canvas x:Name="CanvasEl" HorizontalAlignment="Left" Height="360" Margin="-0.2,0.8,0,-0.8" VerticalAlignment="Top" Width="360" Background="AntiqueWhite">
+                        <Label Content="Antoine" FontSize="22" FontWeight="Bold" Width="100" Canvas.Left="130" Canvas.Top="144" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Content="Carpentier" FontSize="26" FontWeight="Bold" Width="200" Canvas.Left="80" Canvas.Top="171" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Canvas>
+                </Border>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</Window>
