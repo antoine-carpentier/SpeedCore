@@ -1,2 +1,2 @@
 # SpeedCore
-SpeedCore Vizualisation Tool
+Vizualisation Tool for concrete-filled composite steel plate shear wall ("SpeedCore").
